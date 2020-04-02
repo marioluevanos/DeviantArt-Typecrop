@@ -1,7 +1,9 @@
 # DeviantArt-Typecrop
-DeviantArt Branded Typography with SVG Replacement	DeviantArt Branded Typography with SVG Replacement
+DeviantArt Branded Typography with SVG Replacement
 
-[Live Preview ](https://deviantart-typecrop.web.app/)
+[Demo](https://deviantart-typecrop.web.app/)
+
+![alt Preview](https://github.com/marioluevanos/DeviantArt-TypeCrop-Demo/blob/master/preview.jpg)
 
 ```
     npm install deviantart-typecrop
