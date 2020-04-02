@@ -1,15 +1,16 @@
 {
   "name": "deviantart-typecrop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DeviantArt Typecrop",
   "main": "index.js",
   "keywords": ["DeviantArt", "SVG", "Font"],
   "author": "Mario Luevanos",
   "license": "ISC",
   "scripts": {
+    "copy": "cp dist/index.js index.js",
     "clean": "rm dist/**",
     "dev": "parcel src/index.js",
-    "build": "npm run clean && parcel build src/index.js"
+    "build": "parcel build src/index.js && npm run copy && npm run clean"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
