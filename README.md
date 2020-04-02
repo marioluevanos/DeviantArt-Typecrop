@@ -3,13 +3,13 @@ DeviantArt Branded Typography with SVG Replacement	DeviantArt Branded Typography
 
 [Live Preview ](https://deviantart-typecrop.web.app/)
 
-```sh
+```
     npm install deviantart-typecrop
 ```
-
-```sh
-    import typeCrop from 'deviantart-typecrop'
-
-    // Select a heading tag to apply typecrop
+```
+    typeCrop("h1")
+```
+Select a heading tag to apply typecrop
+```
     typeCrop("h1")
 ```
