@@ -7,7 +7,7 @@ DeviantArt Branded Typography with SVG Replacement	DeviantArt Branded Typography
     npm install deviantart-typecrop
 ```
 ```
-    typeCrop("h1")
+    import typeCrop from 'deviantart-typecrop'
 ```
 Select a heading tag to apply typecrop
 ```
