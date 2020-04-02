@@ -3,7 +3,7 @@ DeviantArt Branded Typography with SVG Replacement
 
 [Demo](https://deviantart-typecrop.web.app/)
 
-![alt Preview](https://github.com/marioluevanos/DeviantArt-TypeCrop-Demo/blob/master/preview.jpg)
+<img src='https://raw.githubusercontent.com/marioluevanos/DeviantArt-TypeCrop-Demo/master/preview.jpg'/>
 
 ```
     npm install deviantart-typecrop
