@@ -1,6 +1,12 @@
-import { alphabetPaths } from './alphabetPaths'
-import kerningMap from './kerningMap'
-import fontFace from './fontFace'
+/* 
+    Written in ES5, then updated a few parts to ES6. 
+    So there's a lot of refactoring that could be made 
+    with modern JS.
+*/
+
+import { alphabetPaths } from './alphabetPaths';
+import kerningMap from './kerningMap';
+import fontFace from './fontFace';
 
 export default function typeCrop(titles) {
     'use strict';
