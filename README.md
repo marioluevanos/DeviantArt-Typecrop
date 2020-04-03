@@ -2,7 +2,7 @@
 
 DeviantArt Branded Typography with SVG Replacement
 
-<img  src='https://raw.githubusercontent.com/marioluevanos/DeviantArt-TypeCrop-Demo/master/preview.jpg'/>
+<img style='pointer-events: none' src='https://raw.githubusercontent.com/marioluevanos/DeviantArt-TypeCrop-Demo/master/preview.jpg'/>
 When the style guide was developed, as a CSS designer, it was painful to manually crop the letters of the alphabet. This process was done by our design team over repeatedly. This is a tool I used at DeviantArt to automate that process.  It crops out the first and last letters of a headline and replaces them with the stylized SVG letter.  
 
 This also loads the entire "Calibre-Bold" font-family via @font-face.
