@@ -1,23 +1,24 @@
 import { alphabetPaths } from './alphabetPaths'
+import kerningMap from './kerningMap'
 import fontFace from './fontFace'
 
 export default function typeCrop(titles) {
     'use strict';
 
-    var fontFamily = 'Calibre-Bold';
-    var svgID = 'typecrop-svg';
+    const fontFamily = 'Calibre-Bold';
+    const svgID = 'typecrop-svg';
 
     /* Create a Array-like Node List of all the elements */
-    var allTitles = document.querySelectorAll(titles);
+    const allTitles = document.querySelectorAll(titles);
 
     /* Convert from node list to array */
-    var words = [].slice.call(allTitles);
+    const words = [].slice.call(allTitles);
 
-    var createSVG = function () {
+    const createSVG = function () {
 
-        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-        var attrs = {
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+        const attrs = {
             'id': svgID,
             'xmlns:xlink': 'http://www.w3.org/1999/xlink',
             'xmlns': 'http://www.w3.org/2000/svg',
@@ -30,11 +31,11 @@ export default function typeCrop(titles) {
         svg.appendChild(defs);
 
         /* Add the SVG Attrs */
-        for(var attr in attrs) {
+        for(let attr in attrs) {
             svg.setAttribute(attr, attrs[attr]);
         }
 
-        var ifNotViewBox = function (type) {
+        const ifNotViewBox = function (type) {
             if(type !== 'viewBox') {
                 return type;
             }
@@ -65,15 +66,13 @@ export default function typeCrop(titles) {
             });
         };
 
-        createGroups().forEach(function (val, i) {
-            svg.children[0].innerHTML += val;
-        });
+        createGroups().forEach(val => svg.children[0].innerHTML += val);
 
         return svg;
     };
 
     /* Use a Promise for better control of aysnc methods */
-    var typeCrop = function () {
+    var init = function () {
         return new Promise(function (resolve, reject) {
             resolve(createSVG());
         });
@@ -182,7 +181,6 @@ export default function typeCrop(titles) {
     };
 
     var createCatalog = function (letterSet) {
-
         return letterSet
             .map(function (attr) {
                 var log = {};
@@ -268,6 +266,7 @@ export default function typeCrop(titles) {
                 original.style.fontFamily = fontFamily;
                 original.style.textTransform = 'uppercase';
                 original.style.fontWeight = 'normal';
+                original.style.lineHeight = 0.85;
                 return original;
             });
         /*
@@ -320,112 +319,6 @@ export default function typeCrop(titles) {
 
     var typeCropCss = function () {
 
-        /* Kerning between the letters */
-        var kerningMap = {
-            a: {
-                c: { kern: -0.035 },
-                g: { kern: -0.035 },
-                s: { kern: -0.010 },
-                t: { kern: -0.065 },
-                y: { kern: -0.080 },
-                u: { kern: -0.025 },
-                v: { kern: -0.075 },
-                w: { kern: -0.045 }
-            },
-            b: {
-                a: { kern: -0.015 }
-            },
-            c: {
-                a: { kern: -0.025 },
-                y: { kern: -0.035 }
-            },
-            d: {
-                a: { kern: -0.035 },
-                o: { kern: 0.005 },
-                v: { kern: -0.035 },
-                y: { kern: -0.050 }
-            },
-            f: {
-                a: { kern: -0.045 }
-            },
-            g: {
-                a: { kern: -0.025 },
-                g: { kern: 0.005 },
-                o: { kern: 0.005 },
-                ',': { kern: -0.015 }
-            },
-            i: {
-                o: { kern: -0.001 }
-            },
-            j: {
-                a: { kern: -0.020 }
-            },
-            k: {
-                o: { kern: -0.035 },
-                s: { kern: -0.035 }
-            },
-            l: {
-                y: { kern: -0.085 }
-            },
-            p: {
-                a: { kern: -0.060 },
-                t: { kern: -0.010 }
-            },
-            r: {
-                t: { kern: -0.005 },
-                v: { kern: -0.015 },
-                y: { kern: -0.025 }
-            },
-            s: {
-                a: { kern: -0.015 },
-                t: { kern: -0.010 }
-            },
-            t: {
-                a: { kern: -0.065 },
-                o: { kern: -0.025 },
-                w: { kern: 0.010 },
-                y: { kern: 0.010 }
-            },
-            o: {
-                t: { kern: -0.015 },
-                v: { kern: -0.035 },
-                w: { kern: -0.020 },
-                y: { kern: -0.050 }
-            },
-            v: {
-                a: { kern: -0.075 },
-                o: { kern: -0.035 }
-            },
-            w: {
-                a: { kern: -0.045 },
-                o: { kern: -0.035 }
-            },
-            y: {
-                '-': { kern: -0.075 },
-                '—': { kern: -0.075 },
-                '–': { kern: -0.075 },
-                a: { kern: -0.080 },
-                o: { kern: -0.050 },
-                s: { kern: -0.035 },
-                t: { kern: 0.010 }
-            },
-            '9': {
-                '.': { kern: -0.025 }
-            },
-            '’': {
-                a: { kern: -0.085 }
-            },
-            '-': {
-                t: { kern: -0.075 }
-            },
-            '–': {
-                t: { kern: -0.075 }
-            },
-            '—': {
-                t: { kern: -0.075 }
-            }
-        };
-
         var kernRules = function (KM, i, parent) {
             return Object.keys(parent).map(function (letter) {
                 var selector = Object.keys(KM)[i];
@@ -457,10 +350,8 @@ export default function typeCrop(titles) {
             style.innerHTML += styles.join().replace(/\,/g, '');
 
             /*
-                loadWebFont();
-                Add webfont CSS, if it's not loaded
-                via webfont, then the alignment will break
-                with desktop version of Calibre
+                fontFace();
+                Load font-face with base64 fonts
             */
             style.innerHTML += fontFace();
             return style;
@@ -480,7 +371,7 @@ export default function typeCrop(titles) {
     }
 
     /* Make request and get the SVG files */
-    return typeCrop()
+    init()
         .then(appendSVG)
         .then(getAttributes)
         .then(makeLetterSet)
@@ -488,5 +379,14 @@ export default function typeCrop(titles) {
         .then(wrapLetters)
         .then(replaceWithSVG)
         .catch(typeCropErr);
-    
+
+    return {
+        fontFace
+    }
+}
+
+typeCrop.fontFace = fontFace
+
+if (process.env.NODE_ENV === 'development') {
+    window.typeCrop = typeCrop
 }
