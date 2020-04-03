@@ -1,6 +1,6 @@
 {
   "name": "deviantart-typecrop",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "DeviantArt Typecrop",
   "main": "index.js",
   "keywords": ["DeviantArt", "SVG", "Font"],
@@ -9,8 +9,8 @@
   "scripts": {
     "copy": "cp dist/index.js index.js",
     "clean": "rm dist/**",
-    "dev": "parcel src/index.js",
-    "build": "parcel build src/index.js && npm run copy && npm run clean"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.js --global typeCrop && npm run copy && npm run clean"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
