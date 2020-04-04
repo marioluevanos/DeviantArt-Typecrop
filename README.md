@@ -27,7 +27,7 @@ import typecrop from 'deviantart-typecrop'
 
 Or use a script tag
 ```
-<script src='https://unpkg.com/deviantart-typecrop@1.0.5/index.js'></script>
+<script src='https://unpkg.com/deviantart-typecrop@1.0.6/index.js'></script>
 ```
 
 ## Usage
