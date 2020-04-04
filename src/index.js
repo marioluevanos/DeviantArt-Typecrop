@@ -8,7 +8,7 @@ import { alphabetPaths } from './alphabetPaths';
 import kerningMap from './kerningMap';
 import fontFace from './fontFace';
 
-export default function typeCrop(titles) {
+export default function typecrop(titles) {
     'use strict';
 
     const fontFamily = 'Calibre-Bold';
@@ -369,7 +369,7 @@ export default function typeCrop(titles) {
     };
 
     var typeCropErr = function (err) {
-        console.warn('Opps! Something wrong with typeCrop(): ' + err);
+        console.warn('Opps! Something wrong with typecrop(): ' + err);
     };
 
     if(!document.getElementById('typecrop-css')) {
@@ -385,14 +385,10 @@ export default function typeCrop(titles) {
         .then(wrapLetters)
         .then(replaceWithSVG)
         .catch(typeCropErr);
-
-    return {
-        fontFace
-    }
 }
 
-typeCrop.fontFace = fontFace
+typecrop.fontFace = fontFace
 
 if (process.env.NODE_ENV === 'development') {
-    window.typeCrop = typeCrop
+    window.typecrop = typecrop
 }

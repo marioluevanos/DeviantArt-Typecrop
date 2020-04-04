@@ -21,7 +21,7 @@ Install with NPM
 npm install deviantart-typecrop
 ```
 ```
-import typeCrop from 'deviantart-typecrop'
+import typecrop from 'deviantart-typecrop'
 ```
 
 
@@ -33,7 +33,7 @@ Or use a script tag
 ## Usage
 Use a CSS selector to apply the stylized crop
 ```
-typeCrop(".some-class")
+typecrop(".some-class")
 ```
 Use regular CSS to apply your own styles
 ```
