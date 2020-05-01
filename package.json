@@ -1,6 +1,6 @@
 {
   "name": "deviantart-typecrop",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "DeviantArt Typecrop",
   "main": "index.js",
   "keywords": ["DeviantArt", "SVG", "Font"],
